@@ -3,4 +3,6 @@
     <string name="nama">Nama</string>
     <string name="nim">NIM</string>
     <string name="email">Email</string>
+    <string name="set">Set</string>
+    <string name="simpan">Simpan</string>
 </resources>

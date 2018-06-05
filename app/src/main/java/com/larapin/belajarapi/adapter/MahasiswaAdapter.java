@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Avin on 23/05/2018.
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 public class MahasiswaAdapter extends ArrayAdapter<Mahasiswa> {
     public MahasiswaAdapter(@NonNull Context context,
                             int resource,
-                            @NonNull ArrayList<Mahasiswa> objects) {
+                            @NonNull List<Mahasiswa> objects) {
         super(context, resource, objects);
     }
 
@@ -55,7 +56,11 @@ public class MahasiswaAdapter extends ArrayAdapter<Mahasiswa> {
         tvEmail.setText(mahasiswa.getEmail());
 
         ImageView imageView = (ImageView)convertView.findViewById(R.id.iv_foto);
-        Picasso.get().load(mahasiswa.getFoto()).into(imageView);
+        Picasso.get()
+                .load("http://192.168.43.171:8080/belajarapi/"+mahasiswa.getFoto())
+                .resize(200, 200)
+                .centerCrop()
+                .into(imageView);
 
 
         return convertView;

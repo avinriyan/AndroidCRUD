@@ -1,5 +1,6 @@
 package com.larapin.belajarapi.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -8,15 +9,35 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Mahasiswa {
-    private String nama, nim, email, foto;
 
-    public Mahasiswa(){}
+    @SerializedName("id")
+    @Expose
+    private String id;
+    @SerializedName("nama")
+    @Expose
+    private String nama;
+    @SerializedName("nim")
+    @Expose
+    private String nim;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("foto")
+    @Expose
+    private String foto;
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    @SerializedName("updated_at")
+    @Expose
+    private String updatedAt;
 
-    public Mahasiswa(String nama, String nim, String email, String foto) {
-        this.nama = nama;
-        this.nim = nim;
-        this.email = email;
-        this.foto = foto;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNama() {
@@ -49,5 +70,21 @@ public class Mahasiswa {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
